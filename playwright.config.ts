@@ -60,14 +60,33 @@ export default defineConfig({
     // },
 
     /* Test against branded browsers. */
-    // {
-    //   name: 'Microsoft Edge',
-    //   use: { ...devices['Desktop Edge'], channel: 'msedge' },
-    // },
-    // {
-    //   name: 'Google Chrome',
-    //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
-    // },
+    {
+      name: 'Microsoft Edge',
+      use: { 
+      //...devices['Desktop Edge'],
+      viewport: null, 
+      channel: 'msedge' },
+     
+    },
+    {
+      name: 'Google Chrome',
+      use: {
+      
+       //...devices['Desktop Chrome'], 
+      viewport: null,
+      channel: 'chrome' },
+    
+    },
+    
+    {
+      name: 'Firefox',
+      use: {
+      
+       //...devices['Desktop Firefox'], 
+      viewport: null,
+      channel: 'firefox' },
+    
+    },
   ],
 
   /* Run your local dev server before starting the tests */
