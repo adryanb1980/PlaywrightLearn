@@ -13,7 +13,9 @@ import { defineConfig, devices } from '@playwright/test';
  */
 export default defineConfig({
   testDir: './tests',
-  /* Run tests in files in parallel */
+  /* Run tests in files in parallel */  
+  outputDir: 'test-results',
+  /* Folder for test artifacts such as screenshots, videos, traces, etc. */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
@@ -41,30 +43,35 @@ export default defineConfig({
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      use: { 
+        
+        //...devices['Desktop Chrome'] 
+        viewport: null,
+      
+      },
     },
 
     {
       name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
-    },
-
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
+      use: { 
+        
+        //...devices['Desktop Firefox'] 
+        viewport: null,
+      
+      },
     },
 
     /* Test against mobile viewports. */
     // {
-    //   name: 'Mobile Chrome',
-    //   use: { ...devices['Pixel 5'] },
+    //  name: 'Mobile Chrome',
+    // use: { ...devices['Pixel 5'] },
     // },
     // {
     //   name: 'Mobile Safari',
     //   use: { ...devices['iPhone 12'] },
     // },
 
-    /* Test against branded browsers. */
+    /* Test against branded browsers.*/ 
     {
       name: 'Microsoft Edge',
       use: { 
@@ -73,6 +80,8 @@ export default defineConfig({
       channel: 'msedge' },
      
     },
+
+    
     {
       name: 'Google Chrome',
       use: {
@@ -82,7 +91,7 @@ export default defineConfig({
       channel: 'chrome' },
     
     },
-    
+
   ],
 
   /* Run your local dev server before starting the tests */
