@@ -30,6 +30,11 @@ export default defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
+    launchOptions: {
+      // 1
+      args: ["--start-maximized"],
+    },
+
   },
 
   /* Configure projects for major browsers */
@@ -78,15 +83,6 @@ export default defineConfig({
     
     },
     
-    {
-      name: 'Firefox',
-      use: {
-      
-       //...devices['Desktop Firefox'], 
-      viewport: null,
-      channel: 'firefox' },
-    
-    },
   ],
 
   /* Run your local dev server before starting the tests */
