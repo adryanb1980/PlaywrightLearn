@@ -8,6 +8,8 @@ test('has title', async ({ page }, testInfo) => {
   // Expect a title "to contain" a substring.
   await expect(page).toHaveTitle("DEMOQA");
   const screenshotprojects = await page.screenshot();
-  await testInfo.attach('screenshotprojects', { body: screenshotprojects, contentType: 'image/png' })
+  await testInfo.attach('screenshotprojects', { body: screenshotprojects, contentType: 'image/png' });
+
+
   await page.close(); 
 });
