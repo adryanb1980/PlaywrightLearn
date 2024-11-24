@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('has title', async ({ page }, testInfo) => {
+test('Adi', async ({ page }, testInfo) => {
   test.setTimeout(120000);
 
   await page.goto('https://demoqa.com/');
